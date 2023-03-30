@@ -7,8 +7,8 @@ import warnings
 import seaborn as sns
 from wordcloud import WordCloud
 import numpy as np
-import PIL.Image
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from PIL import Image
 
 st.set_page_config(page_title="Chat Analysis", page_icon="🗨", initial_sidebar_state="expanded")
 uploaded_file = st.file_uploader("Choose a file")
@@ -92,7 +92,8 @@ if uploaded_file:
         st.subheader("Wordcloud")
 
         fig, ax = plt.subplots()
-        python_mask = np.array(PIL.Image.open("E:\Whatsapp chat Analyzer\Chat Analyzer\whatsappimage.png"))
+        python_mask = np.array(Image.open("whatsappimage.png"))
+        # python_mask = np.array(PIL.Image.open("E:\Whatsapp chat Analyzer\Chat Analyzer\whatsappimage.png"))
         wc = WordCloud(mask=python_mask,background_color='white').generate(l)
         ax.imshow(wc)
         plt.axis("off")
