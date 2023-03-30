@@ -10,6 +10,8 @@ import numpy as np
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from PIL import Image
 
+nltk.download('vader_lexicon')
+
 st.set_page_config(page_title="Chat Analysis", page_icon="🗨", initial_sidebar_state="expanded")
 uploaded_file = st.file_uploader("Choose a file")
 
